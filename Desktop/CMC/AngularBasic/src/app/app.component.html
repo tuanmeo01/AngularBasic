@@ -1,2 +1,11 @@
-AppComponent
+<h1>data binding</h1>
+{{ title }}
+<p>{{ "this is my name" + user.name }}</p>
+<p>{{ "this is my age" + user.age }}</p>
+
+<input type="text" [value]="user.name" />
+
+<button type="button" (click)="handleClick()">click me!</button>
+<br />
+<input type="text" [ngModel]="title" (ngModelChange)="title = $event" />
 <app-hello-world></app-hello-world>
