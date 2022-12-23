@@ -9,8 +9,44 @@
 <br />
 <app-hello-world></app-hello-world> -->
 
-<div *ngIf="user.age >= 18; else noAge18">Ban da du tuoi</div>
+<!-- <div *ngIf="user.age >= 18; else noAge18">Ban da du tuoi</div>
 <ng-template #noAge18>
   <div>Ban chua du tuoi truong thanh</div>
 </ng-template>
 <input type="text" [ngModel]="user.age" (ngModelChange)="user.age = $event" />
+<br />
+<button (click)="user.age = user.age - 1">-</button>
+{{ user.age }}
+<button (click)="user.age = user.age + 1">+</button> -->
+
+<!--
+index: so thu tu,
+count: tong phan tu trong mang
+first: true neu la phan tu dau tien
+last : true neu la phan tu cuoi cung
+even : true neu o vi tri chan
+odd : true neu o vi tri le
+-->
+
+<ul>
+  <li
+    *ngFor="
+      let users of user;
+      index as idx;
+      count as total;
+      first as isFirst;
+      last as isLast;
+      even as isEven;
+      odd as isOdd
+    "
+  >
+    {{ users.id }} - {{ users.name }} - {{ users.company.name }}
+    <br />
+    <span>index {{ idx }} of {{ total }}</span>
+    <br />
+    <span *ngIf="isEven; else isOddIdx"> index is even</span>
+    <ng-template #isOddIdx><span>index is odd</span></ng-template>
+    <span *ngIf="isFirst">First user</span>
+    <span *ngIf="isLast">Last user</span>
+  </li>
+</ul>
