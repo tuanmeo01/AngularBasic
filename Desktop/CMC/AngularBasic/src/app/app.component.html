@@ -50,7 +50,7 @@ odd : true neu o vi tri le
     <span *ngIf="isLast">Last user</span>
   </li>
 </ul> -->
-<button (click)="isWarning = !isWarning">toggle warning</button>
+<!-- <button (click)="isWarning = !isWarning">toggle warning</button>
 <button (click)="isDanger = !isDanger">toggle danger</button>
 
 <div
@@ -61,4 +61,10 @@ odd : true neu o vi tri le
 
 <p [style]="{ color: 'red', backgroundColor: 'yellow', fontSize: '20' }">
   style binding
-</p>
+</p> -->
+
+<app-progress-bar></app-progress-bar>
+<app-progress-bar
+  [progress]="70"
+  [progressColor]="'dodgerblue'"
+></app-progress-bar>
