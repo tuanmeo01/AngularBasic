@@ -1,11 +1,16 @@
-<h1>data binding</h1>
+<!-- <h1>data binding</h1>
 {{ title }}
 <p>{{ "this is my name" + user.name }}</p>
 <p>{{ "this is my age" + user.age }}</p>
-
 <input type="text" [value]="user.name" />
-
 <button type="button" (click)="handleClick()">click me!</button>
 <br />
 <input type="text" [ngModel]="title" (ngModelChange)="title = $event" />
-<app-hello-world></app-hello-world>
+<br />
+<app-hello-world></app-hello-world> -->
+
+<div *ngIf="user.age >= 18; else noAge18">Ban da du tuoi</div>
+<ng-template #noAge18>
+  <div>Ban chua du tuoi truong thanh</div>
+</ng-template>
+<input type="text" [ngModel]="user.age" (ngModelChange)="user.age = $event" />

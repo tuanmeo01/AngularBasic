@@ -9,9 +9,9 @@ export class AppComponent {
   title = 'angular-basic';
   user = {
     name: 'tuan',
-    age: '21',
+    age: 21,
   };
   handleClick() {
-    console.log('clicked');
+    alert('clicked');
   }
 }
