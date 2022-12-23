@@ -28,7 +28,7 @@ even : true neu o vi tri chan
 odd : true neu o vi tri le
 -->
 
-<ul>
+<!-- <ul>
   <li
     *ngFor="
       let users of user;
@@ -49,4 +49,16 @@ odd : true neu o vi tri le
     <span *ngIf="isFirst">First user</span>
     <span *ngIf="isLast">Last user</span>
   </li>
-</ul>
+</ul> -->
+<button (click)="isWarning = !isWarning">toggle warning</button>
+<button (click)="isDanger = !isDanger">toggle danger</button>
+
+<div
+  class="box"
+  [class.red-border]="isDanger"
+  [class.yellow-background]="isWarning"
+></div>
+
+<p [style]="{ color: 'red', backgroundColor: 'yellow', fontSize: '20' }">
+  style binding
+</p>
