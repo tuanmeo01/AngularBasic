@@ -242,6 +242,7 @@ export class AppComponent {
   handleClick() {
     alert('clicked');
   }
+  isChecked = true;
   isWarning = false;
   isDanger = false;
 }
